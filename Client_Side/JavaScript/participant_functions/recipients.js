@@ -11,6 +11,7 @@ function loadRecipients()
 	var newRecPlural = recPlural.replace(" ", "_");
 	
 	var toRet = [];
+    console.log(recPlural)
 	$.ajax({
 		type: 'GET', 
 		contentType: 'application/json',
