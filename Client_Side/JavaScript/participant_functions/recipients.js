@@ -16,7 +16,7 @@ function loadRecipients()
 		type: 'GET', 
 		contentType: 'application/json',
 		crossDomain:true,
-		url: '/blockchain/participants/'+newRecPlural.toLowerCase(),
+		url: '/blockchain/participants/'+newRecPlural.toLowerCase()+'/'+newRecPlural.toLowerCase()+'.js',
 		success: function(d) {
 			
 			$("#recsTbl").empty();
