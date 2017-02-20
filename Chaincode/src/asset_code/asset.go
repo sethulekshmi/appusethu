@@ -17,22 +17,29 @@ var logger = shim.NewLogger("CLDChaincode")
 //						 user's eCert
 //==============================================================================================================================
 //CURRENT WORKAROUND USES ROLES CHANGE WHEN OWN USERS CAN BE CREATED SO THAT IT READ 1, 2, 3, 4, 5
-const   AUTHORITY      =  "regulator"
-const   MANUFACTURER   =  "manufacturer"
-const   PRIVATE_ENTITY =  "private"
-const   LEASE_COMPANY  =  "lease_company"
-const   SCRAP_MERCHANT =  "scrap_merchant"
+const   MINER      =  "miner"
+const   DISTRIBUTOR   =  "distributor"
+const   DEALERSHIP =  "dealership"
+const   BUYER  =  "buyer"
+const   TRADER =  "trader"
+const   CUTTER = "cutter"
+const   JEWELLERY_MAKER = "jewellery_maker"
+const   CUSTOMER = "customer"
 
 
 //==============================================================================================================================
 //	 Status types - Asset lifecycle is broken down into 5 statuses, this is part of the business logic to determine what can
 //					be done to the vehicle at points in it's lifecycle
 //==============================================================================================================================
-const   STATE_TEMPLATE  			=  0
-const   STATE_MANUFACTURE  			=  1
-const   STATE_PRIVATE_OWNERSHIP 	=  2
-const   STATE_LEASED_OUT 			=  3
-const   STATE_BEING_SCRAPPED  		=  4
+const   STATE_MINING  			=  0
+const   STATE_DISTRIBUTING  			=  1
+const   STATE_INTER_DEALING 	=  2
+const   STATE_BUYING 			=  3
+const   STATE_TRADING  		=  4
+const   STATE_CUTTING = 5
+const   STATE_JEWEL_MAKING = 6
+const   STATE_PURCHASING = 7
+ 
 
 //==============================================================================================================================
 //	 Structure Definitions
@@ -47,17 +54,20 @@ type  SimpleChaincode struct {
 //	Vehicle - Defines the structure for a car object. JSON on right tells it what JSON fields to map to
 //			  that element when reading a JSON object into the struct e.g. JSON make -> Struct Make.
 //==============================================================================================================================
-type Vehicle struct {
-	Make            string `json:"make"`
-	Model           string `json:"model"`
-	Reg             string `json:"reg"`
-	VIN             int    `json:"VIN"`
-	Owner           string `json:"owner"`
-	Scrapped        bool   `json:"scrapped"`
-	Status          int    `json:"status"`
+type Diamond struct {
+	     Clarity       string `json:"clarity"`
+	Diamondat           string `json:"diamondat"`
+	Cut             string `json:"cut"`
+	Symmetry             int    `json:"symmetry"`
+	Polish           string `json:"polish"`
+	Location        bool   `json:"location"`
+	Timestamp          int    `json:"timestamp"`
 	Colour          string `json:"colour"`
-	V5cID           string `json:"v5cID"`
-	LeaseContractID string `json:"leaseContractID"`
+	AssetID           string `json:"assetID"`
+	Date string `json:"date"`
+    Owner string `json:"owner"`
+    JewelleryType string `json:"jewellerytype"`
+    Status int `json:"status"`
 }
 
 
