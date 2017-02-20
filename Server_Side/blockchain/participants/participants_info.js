@@ -207,4 +207,4 @@ let participants_info = {
 	
 
 };
-export.participants_info = participants_info;
+exports.participants_info = participants_info;
