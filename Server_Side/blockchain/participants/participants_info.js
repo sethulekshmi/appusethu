@@ -207,4 +207,4 @@ let participants_info = {
 	
 
 };
-module.exports = participants_info;
+export.participants_info = participants_info;
