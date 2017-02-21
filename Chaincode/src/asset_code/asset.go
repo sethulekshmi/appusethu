@@ -60,8 +60,8 @@ type Diamond struct {
 	Cut             string `json:"cut"`
 	Symmetry             int    `json:"symmetry"`
 	Polish           string `json:"polish"`
-	Location        bool   `json:"location"`
-	Timestamp          int    `json:"timestamp"`
+	Location        string   `json:"location"`
+	Timestamp          string    `json:"timestamp"`
 	Colour          string `json:"colour"`
 	AssetID           string `json:"assetID"`
 	Date string `json:"date"`
